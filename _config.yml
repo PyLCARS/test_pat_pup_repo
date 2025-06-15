@@ -1,0 +1,42 @@
+# Book settings
+title: EDA Python Tutorials
+author: GProtoZeroW
+logo: ""
+
+# Force re-execution of notebooks on each build
+execute:
+  execute_notebooks: auto
+  timeout: 100
+  allow_errors: false
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: eda-tutorials.tex
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/GProtoZeroW/eda-python-tutorials
+  path_to_book: ""
+  branch: main
+
+# Add GitHub buttons to your book
+html:
+  use_issues_button: true
+  use_repository_button: true
+  use_edit_page_button: false  # Set to false for premium versions
+  
+# Extra CSS for styling
+sphinx:
+  extra_extensions:
+    - sphinx.ext.mathjax
+    - sphinx.ext.autodoc
+  config:
+    html_static_path: ['_static']
+    html_css_files:
+      - free-copyright.css      # Free/public version
+      # - premium-copyright.css  # Premium/early-access version

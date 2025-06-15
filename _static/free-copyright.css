@@ -1,0 +1,75 @@
+/* Free/Public Content Copyright CSS */
+
+/* Add a subtle footer notice */
+.bd-main .bd-content .bd-article-container::after {
+    content: "This content is freely available under Creative Commons CC-BY-SA 4.0";
+    display: block;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.75rem;
+    color: #666;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Add a very subtle watermark to each page */
+.bd-main .bd-content {
+    position: relative;
+}
+
+.bd-main .bd-content::before {
+    content: "Open Source";
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 0.7rem;
+    color: rgba(0, 0, 0, 0.08);
+    font-weight: bold;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Style for code cells to indicate they're freely usable */
+.cell.tag_remove-input::before {
+    content: "Free to use and modify";
+    display: block;
+    font-size: 0.65rem;
+    color: #999;
+    margin-bottom: 0.25rem;
+    font-style: italic;
+}
+
+/* Add attribution reminder in print mode */
+@media print {
+    .bd-main .bd-content .bd-article-container::after {
+        content: "This content is freely available under Creative Commons CC-BY-SA 4.0. Please provide attribution when sharing.";
+        page-break-inside: avoid;
+        font-size: 0.7rem;
+        margin-top: 2rem;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+    }
+}
+
+/* Subtle indicator in navbar */
+.bd-header-nav-items::after {
+    content: "📖 Open Content";
+    font-size: 0.7rem;
+    color: #666;
+    margin-left: 1rem;
+    opacity: 0.7;
+}
+
+/* Dark mode adjustments */
+html[data-theme="dark"] .bd-main .bd-content::before {
+    color: rgba(255, 255, 255, 0.05);
+}
+
+html[data-theme="dark"] .bd-main .bd-content .bd-article-container::after {
+    border-top-color: #444;
+    color: #aaa;
+}
